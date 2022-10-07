@@ -1,4 +1,5 @@
 package com.aarafrao.recipeapp
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -6,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class ProductAdapter(private val speedLimitModels: List<SpeedLimitModel>) :
+class ProductAdapter(private var speedLimitModels: List<SpeedLimitModel>) :
     RecyclerView.Adapter<ProductAdapter.VH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         val v: View =
@@ -23,6 +24,12 @@ class ProductAdapter(private val speedLimitModels: List<SpeedLimitModel>) :
 
     override fun getItemCount(): Int {
         return 4
+    }
+
+    fun filterList(filteredlist: ArrayList<SpeedLimitModel>) {
+        speedLimitModels = filteredlist
+        notifyDataSetChanged()
+
     }
 
     class VH(itemView: View) : RecyclerView.ViewHolder(itemView) {
