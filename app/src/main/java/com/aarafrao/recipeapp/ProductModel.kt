@@ -1,4 +1,4 @@
 package com.aarafrao.recipeapp
 
 
-data class ProductModel(var day: String, var location: String, var speed: String)
+data class ProductModel(var title: String, var desc: String, var price: String)

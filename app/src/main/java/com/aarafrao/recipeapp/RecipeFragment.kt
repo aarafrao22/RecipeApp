@@ -30,13 +30,23 @@ class RecipeFragment : Fragment() {
 
         expandableListView = view.findViewById(R.id.expendableList)
         if (expandableListView != null) {
+
+
+            //getting data here from Another class
             val listData = data
+
+
             titleList = ArrayList(listData.keys)
+
             adapter = CustomExpandableListAdapter(
                 requireContext().applicationContext,
                 titleList as ArrayList<String>,
                 listData
             )
+
+
+            //if list expand
+
             expandableListView!!.setAdapter(adapter)
             expandableListView!!.setOnGroupExpandListener { groupPosition ->
                 Toast.makeText(
@@ -45,6 +55,8 @@ class RecipeFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
+            //if list collapse
             expandableListView!!.setOnGroupCollapseListener { groupPosition ->
                 Toast.makeText(
                     context,
@@ -52,6 +64,8 @@ class RecipeFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
+            //if user click on child
             expandableListView!!.setOnChildClickListener { _, _, groupPosition, childPosition, _ ->
                 Toast.makeText(
                     context,

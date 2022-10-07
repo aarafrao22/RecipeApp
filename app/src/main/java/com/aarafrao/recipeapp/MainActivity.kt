@@ -17,11 +17,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //creating instance of adapter for view pager
+
         vpAdapter = VPAdapter(
             supportFragmentManager, FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
         )
+
         viewpager = findViewById(R.id.pager)
         tablayout?.setupWithViewPager(viewpager)
+
+        //adding members of viewpager
         vpAdapter!!.addFragment(RecipeFragment(), "Recipe")
         vpAdapter!!.addFragment(ProductFragment(), "Product")
         viewpager?.setAdapter(vpAdapter)

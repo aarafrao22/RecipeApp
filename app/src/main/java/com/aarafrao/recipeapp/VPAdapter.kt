@@ -17,6 +17,8 @@ class VPAdapter(fm: FragmentManager, behavior: Int) :
         return fragmentArrayList.size
     }
 
+
+    //method which will add fragments into a list
     fun addFragment(fragment: Fragment, title: String) {
         fragmentArrayList.add(fragment)
         fragmentTitle.add(title)

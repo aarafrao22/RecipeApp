@@ -21,6 +21,9 @@ class CustomExpandableListAdapter internal constructor(
         return expandedListPosition.toLong()
     }
 
+
+    //binding child item view with data
+
     override fun getChildView(
         listPosition: Int,
         expandedListPosition: Int,
@@ -40,6 +43,8 @@ class CustomExpandableListAdapter internal constructor(
         return convertView
     }
 
+
+    //no of child for each parent
     override fun getChildrenCount(listPosition: Int): Int {
         return this.dataList[this.titleList[listPosition]]!!.size
     }
@@ -56,6 +61,8 @@ class CustomExpandableListAdapter internal constructor(
         return listPosition.toLong()
     }
 
+
+    //binding item of parent view with data
     override fun getGroupView(
         listPosition: Int,
         isExpanded: Boolean,
