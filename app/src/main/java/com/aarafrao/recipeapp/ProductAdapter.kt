@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class ProductAdapter(private var speedLimitModels: List<SpeedLimitModel>) :
+class ProductAdapter(private var speedLimitModels: List<ProductModel>) :
     RecyclerView.Adapter<ProductAdapter.VH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         val v: View =
@@ -26,7 +26,7 @@ class ProductAdapter(private var speedLimitModels: List<SpeedLimitModel>) :
         return 4
     }
 
-    fun filterList(filteredlist: ArrayList<SpeedLimitModel>) {
+    fun filterList(filteredlist: ArrayList<ProductModel>) {
         speedLimitModels = filteredlist
         notifyDataSetChanged()
 
